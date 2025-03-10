@@ -1,4 +1,8 @@
-<form method="POST" action="{{ url_for('main.ajouter_employe') }}">
+{% extends "base.html" %}
+{% block title %}Ajouter un employé{% endblock %}
+{% block content %}
+<h1>Ajouter un employé</h1>
+<form method="POST">
     <div class="form-group">
         <label for="nom">Nom</label>
         <input type="text" class="form-control" id="nom" name="nom" required>
@@ -17,3 +21,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>
+{% endblock %}
