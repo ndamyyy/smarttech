@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Employés{% endblock %}
+{% block content %}
+<h1>Liste des Employés</h1>
+<a href="{{ url_for('main.ajouter_employe') }}" class="btn btn-primary mb-3">Ajouter un employé</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Poste</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employe in employes %}
+        <tr>
+            <td>{{ employe.id }}</td>
+            <td>{{ employe.nom }}</td>
+            <td>{{ employe.prenom }}</td>
+            <td>{{ employe.email }}</td>
+            <td>{{ employe.poste }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Documents{% endblock %}
+{% block content %}
+<h1>Liste des Documents</h1>
+<a href="{{ url_for('main.ajouter_document') }}" class="btn btn-primary mb-3">Ajouter un document</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Chemin</th>
+            <th>Date d'upload</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for document in documents %}
+        <tr>
+            <td>{{ document.id }}</td>
+            <td>{{ document.nom }}</td>
+            <td>{{ document.chemin }}</td>
+            <td>{{ document.date_upload.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
